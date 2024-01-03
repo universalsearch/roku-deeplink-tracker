@@ -12,5 +12,6 @@ sub TrackDeepLink(contentId as String, mediaType as String, source as String)
     xfer.SetCertificatesFile("common:/certs/ca-bundle.crt")
     xfer.setUrl(url)
 
-    xfer.GetToString()
+    ' Send the request asynchronously so we don't interrupt the user's experience
+    xfer.AsyncGetToString()
 end sub
